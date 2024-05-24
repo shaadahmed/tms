@@ -13,6 +13,12 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- DataTables CSS -->
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.21/css/jquery.dataTables.css">
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+        @yield('styles')
     </head>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100">
@@ -29,8 +35,16 @@
 
             <!-- Page Content -->
             <main>
-                {{ $slot }}
+                @yield('content')
             </main>
+
+            <!-- jQuery -->
+            <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+            <!-- DataTables JS -->
+            <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.10.21/js/jquery.dataTables.js"></script>
+            <!-- Bootstrap JS -->
+            <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+            @yield('scripts')
         </div>
     </body>
 </html>
